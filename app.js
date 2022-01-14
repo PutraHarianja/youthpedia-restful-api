@@ -3,7 +3,7 @@ dotenv.config()
 
 const express = require('express')
 
-const router = require('./Routes')
+const router = require('./Routers')
 const port = process.env.PORT || 3000
 const db = require('./Helpers/db')
 

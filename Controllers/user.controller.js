@@ -39,6 +39,7 @@ class UserController {
     static async login(req, res) {
         const email = req.body.email
         const password = req.body.password
+        console.log(req.body)
 
         UserModel.findOne({ email: email }, (error, result) => {
             if (error) {
@@ -46,6 +47,10 @@ class UserController {
                     message: 'wrong email or password'
                 })
             } else {
+                if (result.password === null) {
+                    return res.status(401).send({
+                        message: 'wrong email or password'
+                    })}
 
                 if (!bcrypt.comparePaswwordHash(password, result.password)) {
                     return res.status(401).send({
@@ -113,12 +118,12 @@ class UserController {
 
     static async updateUserbyId(req, res) {
         UserModel.findByIdAndUpdate({ _id: req.params.id_user }, {
-            username : req.body.username,
-            password : req.body.password,
-            email : req.body.email,
-            role : req.body.role,
+            username: req.body.username,
+            password: req.body.password,
+            email: req.body.email,
+            role: req.body.role,
         }, (error, result) => {
-            if(error){
+            if (error) {
                 console.log(error)
                 return res.send({
                     message: 'no user found, update action failed'
