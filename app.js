@@ -3,7 +3,7 @@ dotenv.config()
 
 const express = require('express')
 
-// const router = require('./Routes')
+const router = require('./Routers')
 const port = process.env.PORT || 3000
 const db = require('./Helpers/db')
 
@@ -15,11 +15,11 @@ async function main() {
         const app = express()
         app.use(express.json())
         
-        // app.use(router)
+        app.use(router)
 
-        // router.get('/', (req, res) => {
-        //     res.send({ welcome: "Welcome to toko-pintar API"})         
-        // })
+        router.get('/', (req, res) => {
+            res.send({ welcome: "Welcome to youthPedia API"})         
+        })
 
         app.listen(port, () => {
             console.log('server is listening on', port)
