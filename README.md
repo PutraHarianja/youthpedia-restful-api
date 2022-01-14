@@ -340,21 +340,11 @@ Request :
 
 ```json
 {
-  "id": "string, unique",
-  "total": "double",
-  "user_id": "ObjectID",
-  "items": [
-    {
-      "berita_id": "ObjectID",
-      "title": "string",
-      "description": "string",
-      "picture": "string",
-      "category": "string",
-      "source": "string",
-      "comment": "ArrayofComment",
-      "trend": "boolean"
-    }
-  ]
+  "id_event": "string, unique",
+  "title": "string",
+  "description": "string",
+  "location": "string",
+  "schedule": "datetime"
 }
 ```
 
@@ -365,21 +355,11 @@ Response :
   "code": "number",
   "status": "string",
   "data": {
-    "id": "string, unique",
-    "total": "double",
-    "user_id": "ObjectID",
-    "items": [
-      {
-        "berita_id": "ObjectID",
-        "title": "string",
-        "description": "string",
-        "picture": "string",
-        "category": "string",
-        "source": "string",
-        "comment": "ArrayofComment",
-        "trend": "boolean"
-      }
-    ]
+    "id_event": "string, unique",
+    "title": "string",
+    "description": "string",
+    "location": "string",
+    "schedule": "datetime"
   }
 }
 ```
@@ -400,24 +380,49 @@ Response :
   "code": "number",
   "status": "string",
   "data": {
-    "id": "string, unique",
-    "total": "double",
-    "user_id": "ObjectID",
-    "items": [
-      {
-        "berita_id": "ObjectID",
-        "title": "string",
-        "description": "string",
-        "picture": "string",
-        "category": "string",
-        "source": "string",
-        "comment": "ArrayofComment",
-        "trend": "boolean"
-      }
-    ]
+    "id_event": "string, unique",
+    "title": "string",
+    "description": "string",
+    "location": "string",
+    "schedule": "datetime"
   }
 }
 ```
+
+## Get All Event
+
+Request :
+
+- Method : GET
+- Endpoint : `/api/event`
+- Header :
+  - Accept: application/json
+
+Response :
+
+```json
+{
+  "code": "number",
+  "status": "string",
+  "data": [
+    {
+    "id_event": "string, unique",
+    "title": "string",
+    "description": "string",
+    "location": "string",
+    "schedule": "datetime"
+  },
+  {
+    "id_event": "string, unique",
+    "title": "string",
+    "description": "string",
+    "location": "string",
+    "schedule": "datetime"
+  }
+  ]
+}
+```
+
 
 ## Update Event
 
@@ -432,21 +437,11 @@ Request :
 
 ```json
 {
-  "id": "string, unique",
-  "total": "double",
-  "user_id": "ObjectID",
-  "items": [
-    {
-      "berita_id": "ObjectID",
-      "title": "string",
-      "description": "string",
-      "picture": "string",
-      "category": "string",
-      "source": "string",
-      "comment": "ArrayofComment",
-      "trend": "boolean"
-    }
-  ]
+  "id_event": "string, unique",
+  "title": "string",
+  "description": "string",
+  "location": "string",
+  "schedule": "datetime"
 }
 ```
 
@@ -457,21 +452,11 @@ Response :
   "code": "number",
   "status": "string",
   "data": {
-    "id": "string, unique",
-    "total": "double",
-    "user_id": "ObjectID",
-    "items": [
-      {
-        "berita_id": "ObjectID",
-        "title": "string",
-        "description": "string",
-        "picture": "string",
-        "category": "string",
-        "source": "string",
-        "comment": "ArrayofComment",
-        "trend": "boolean"
-      }
-    ]
+    "id_event": "string, unique",
+    "title": "string",
+    "description": "string",
+    "location": "string",
+    "schedule": "datetime"
   }
 }
 ```
@@ -489,13 +474,10 @@ Response :
 
 ```json
 {
-  "berita_id": "ObjectID",
+  "id_event": "string, unique",
   "title": "string",
   "description": "string",
-  "picture": "string",
-  "category": "string",
-  "source": "string",
-  "comment": "ArrayofComment",
-  "trend": "boolean"
+  "location": "string",
+  "schedule": "datetime"
 }
 ```
