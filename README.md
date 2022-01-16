@@ -1,6 +1,7 @@
 # API SPEC
 
 Api Specification for YouthPedia consist Users, Berita/News and Events entity.
+Domain Host: https://youtpedia-api.herokuapp.com/
 
 # USER
 

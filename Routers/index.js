@@ -2,8 +2,7 @@ const express = require('express')
 
 const userRoutes = require('./user')
 const beritaRouter = require('./berita')
-// const orderRouter = require('./order')
-const auth = require('../Middleware/auth')
+const eventRouter = require('./event')
 
 
 const router = express.Router()
@@ -20,6 +19,6 @@ router.use("/users", userRoutes)
 
 router.use("/berita", beritaRouter)
 
-// router.use("/orders", auth.login, orderRouter)
+router.use("/events", eventRouter)
 
 module.exports = router
