@@ -482,3 +482,6 @@ Response :
   "schedule": "datetime"
 }
 ```
+
+
+### Test Documentation: https://web.postman.co/documentation/18530605-3d7b8566-f146-4ee7-83a0-74aa63a3ade0/publish?workspaceId=7ca1b0fc-2ed5-4895-8c7a-48c70d310ee3
